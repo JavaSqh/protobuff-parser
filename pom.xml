@@ -15,7 +15,23 @@
         <protobuf-maven-plugin.version>0.5.1</protobuf-maven-plugin.version>
         <protoc.version>3.5.1-1</protoc.version>
         <grpc.version>1.13.1</grpc.version>
+        <protobuf.version>3.6.0</protobuf.version>
     </properties>
+
+    <dependencies>
+        <!--protobuf相关-->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>${protobuf.version}</version>
+        </dependency>
+        <!--protobuf相关end-->
+    </dependencies>
 
 
     <build>
@@ -26,6 +42,7 @@
                 <version>1.5.0.Final</version>
             </extension>
         </extensions>
+
 
         <plugins>
             <plugin>

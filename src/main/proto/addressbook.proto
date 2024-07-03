@@ -2,34 +2,18 @@ syntax = "proto3";
 
 package tutorial;
 
-option java_multiple_files = true;
-option java_package = "com.example.tutorial.protos";
-option java_outer_classname = "AddressBookProtos";
-
-// Person message 表示一个人的信息，包含可选字段。
 message Person {
-  string name = 1;     // 人的姓名。
-  int32 id = 2;        // 人的唯一标识符。
-  string email = 3;    // 人的电子邮件地址。
-
-  // PhoneType 枚举定义不同类型的电话号码。
-  enum PhoneType {
-    PHONE_TYPE_UNSPECIFIED = 0;  // 默认值，未指定电话类型。
-    PHONE_TYPE_MOBILE = 1;       // 手机号码。
-    PHONE_TYPE_HOME = 2;         // 家庭电话号码。
-    PHONE_TYPE_WORK = 3;         // 工作电话号码。
+  string username = 1;
+  string phone = 2;
+  string email = 3;
+  enum Gender {
+    MALE = 0;
+    FEMALE = 1;
+    OTHER = 2;
   }
-
-  // PhoneNumber message 表示一个电话号码，包含可选的类型。
-  message PhoneNumber {
-    string number = 1;         // 电话号码字符串。
-    PhoneType type = 2;       // 电话号码的类型，默认为 HOME。
-  }
-
-  repeated PhoneNumber phones = 4;  // 与此人相关联的电话号码列表。
+  Gender gender = 4;
 }
 
-// AddressBook message 表示人员的地址簿。
 message AddressBook {
-  repeated Person people = 1;  // 地址簿中的人员列表。
+  repeated Person people = 1;
 }
