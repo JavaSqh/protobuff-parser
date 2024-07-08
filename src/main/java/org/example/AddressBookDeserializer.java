@@ -3,22 +3,18 @@ package org.example;
 import tutorial.Addressbook;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class AddressBookDeserializer {
 
     // 主函数：从文件中读取字节数组并执行反序列化操作。
     public static void main(String[] args) throws Exception {
         String addressBookFile = "addressbook.dat";
-
-        // 从文件中读取字节数组。
-        FileInputStream input = new FileInputStream(addressBookFile);
-        byte[] serializedData = new byte[input.available()];
-        input.read(serializedData);
-        input.close();
-
-        // 反序列化AddressBook
+        // 从文件中读取字节数组并反序列化AddressBook
+        byte[] serializedData = Files.readAllBytes(Paths.get(addressBookFile));
         Addressbook.AddressBook addressBook = Addressbook.AddressBook.parseFrom(serializedData);
-
+        // 处理addressBook对象
         // 打印地址簿信息。
         for (Addressbook.Person person : addressBook.getPeopleList()) {
             System.out.println("用户名: " + person.getUsername());
