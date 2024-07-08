@@ -6,10 +6,14 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/**
+ * protobuf反序列化
+ *
+ * @author 公众号： Java编程与思想
+ */
 public class AddressBookDeserializer {
-
-    // 主函数：从文件中读取字节数组并执行反序列化操作。
     public static void main(String[] args) throws Exception {
+        // 主函数：从文件中读取字节数组并执行反序列化操作。
         String addressBookFile = "addressbook.dat";
         // 从文件中读取字节数组并反序列化AddressBook
         byte[] serializedData = Files.readAllBytes(Paths.get(addressBookFile));

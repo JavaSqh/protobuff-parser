@@ -5,12 +5,16 @@ import tutorial.Addressbook;
 
 import java.io.*;
 
+/**
+ * protobuf序列化
+ *
+ * @author 公众号： Java编程与思想
+ */
 public class AddressBookSerializer {
 
-    // 主函数：硬编码数据并执行序列化操作。
     public static void main(String[] args) throws Exception {
+        // 主函数：硬编码数据并执行序列化操作。
         Addressbook.AddressBook.Builder addressBook = Addressbook.AddressBook.newBuilder();
-
         // 添加一个人员信息（硬编码数据）。
         Addressbook.Person person1 = Addressbook.Person.newBuilder()
                 .setUsername("Alice")
