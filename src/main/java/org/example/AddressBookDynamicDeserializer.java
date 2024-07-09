@@ -4,7 +4,6 @@ import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
-import tutorial.Addressbook;
 
 import java.io.FileInputStream;
 import java.util.List;

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package tutorial;
+option java_package = "org.example";
 
 message Person {
   string username = 1;
